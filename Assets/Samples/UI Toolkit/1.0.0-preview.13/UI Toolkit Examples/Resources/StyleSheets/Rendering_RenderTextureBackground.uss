@@ -1,0 +1,15 @@
+.shape
+{
+    background-color: #ff0000;
+}
+
+.shape:hover
+{
+    border-width: 2px;
+    border-color: #AAAAAA;
+}
+
+#capsule-thumbnail
+{
+    background-image: url("/Assets/Samples/UI Toolkit/1.0.0-preview.13/UI Toolkit Examples/Resources/Textures/UIRenderTexture.renderTexture");
+}

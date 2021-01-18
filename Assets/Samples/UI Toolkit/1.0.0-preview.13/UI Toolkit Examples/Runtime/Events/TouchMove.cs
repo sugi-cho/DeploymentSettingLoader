@@ -56,7 +56,7 @@ namespace Samples.Runtime.Events
         {
             if (evt.pointerType != PointerType.touch)
             {
-                return;
+                //return;
             }
 
             if (evt.currentTarget == evt.target)

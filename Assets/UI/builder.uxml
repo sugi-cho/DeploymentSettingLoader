@@ -1,4 +1,5 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="style_from_builder.uss" />
     <ui:VisualElement name="Container" style="flex-grow: 1;">
         <ui:VisualElement name="header_menu" style="min-height: auto; background-color: rgb(255, 0, 0); flex-grow: 0; flex-direction: row; display: flex;">
             <ui:Button text="setting1" display-tooltip-when-elided="true" name="button1" style="margin-left: auto; margin-right: auto;" />
@@ -7,12 +8,12 @@
         </ui:VisualElement>
         <ui:VisualElement name="body" style="flex-grow: 1; flex-direction: row-reverse;">
             <ui:VisualElement name="side_menu" style="flex-grow: 0; min-width: 200px; background-color: rgb(39, 0, 255); display: flex;" />
-            <ui:VisualElement name="main" style="flex-grow: 1; background-image: url(&apos;/Assets/UI Toolkit/Sprites/EmojiOne.png&apos;); -unity-background-scale-mode: scale-to-fit;">
+            <ui:VisualElement name="main" style="flex-grow: 1; background-image: url(&apos;/Assets/UI Toolkit/Sprites/EmojiOne.png&apos;); -unity-background-scale-mode: scale-to-fit; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px;">
                 <ui:VisualElement style="justify-content: center; align-items: center;">
                     <ui:Label text="this is test text" display-tooltip-when-elided="true" style="align-items: auto; flex-grow: 0; visibility: visible; -unity-text-align: upper-center;" />
                 </ui:VisualElement>
-                <ui:VisualElement name="01" class="draggable" style="display: flex; width: 300px; height: 200px; background-color: rgb(232, 255, 40); border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-left-width: 2px; border-right-width: 2px; border-top-width: 2px; border-bottom-width: 2px; border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 5px; padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px; -unity-slice-left: 0; -unity-slice-top: 0; -unity-slice-right: 0; -unity-slice-bottom: 0; -unity-background-scale-mode: stretch-to-fill; opacity: 0.7; position: absolute; left: 62px; top: 176px;" />
-                <ui:VisualElement name="02" class="draggable" style="display: flex; width: 300px; height: 200px; background-color: rgb(232, 255, 40); border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-left-width: 2px; border-right-width: 2px; border-top-width: 2px; border-bottom-width: 2px; border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 5px; padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px; -unity-slice-left: 0; -unity-slice-top: 0; -unity-slice-right: 0; -unity-slice-bottom: 0; -unity-background-scale-mode: stretch-to-fill; opacity: 0.7; position: absolute; left: auto; top: 126px; right: 48px;" />
+                <ui:VisualElement name="01" class="draggable" />
+                <ui:VisualElement name="02" class="draggable" style="left: 200px;" />
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>

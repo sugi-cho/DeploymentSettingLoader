@@ -21,7 +21,6 @@ namespace sugi.cc.UI
             var rootElement = GetComponent<UIDocument>().rootVisualElement;
             rootElement.Query(null, "draggable").ForEach(e =>
             {
-                Debug.Log("register");
                 e.RegisterCallback<PointerDownEvent>(OnPointerDown);
                 e.RegisterCallback<PointerMoveEvent>(OnPointerMove);
                 e.RegisterCallback<PointerUpEvent>(OnPointerUp);
@@ -69,7 +68,7 @@ namespace sugi.cc.UI
                 ve.resolvedStyle.height + ve.resolvedStyle.marginBottom + ve.resolvedStyle.paddingBottom + container.resolvedStyle.paddingBottom);
 
             m_ActiveElement.AddToClassList(ActiveClassName);
-            m_StartPosition = new Vector2(m_ActiveElement.resolvedStyle.left, m_ActiveElement.resolvedStyle.top);
+            m_StartPosition = m_ActiveElement.layout.position;
             m_PointerStartPosition = pointerPosition;
         }
 

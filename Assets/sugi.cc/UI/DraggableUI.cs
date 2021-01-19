@@ -1,11 +1,14 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace sugi.cc.UI
+namespace sugi.cc.ui
 {
     [ExecuteInEditMode, RequireComponent(typeof(UIDocument), typeof(EventSystem))]
     public class DraggableUI : MonoBehaviour
     {
+        [SerializeField] private string draggableClassName = "draggable";
+        [SerializeField] private string draggingClassName = "dragging";
+        
         private VisualElement m_ActiveElement;
 
         private Vector2 m_StartPosition;
@@ -13,13 +16,11 @@ namespace sugi.cc.UI
         private Vector2 m_moveAreaMin;
         private Vector2 m_moveAreaMax;
 
-        private const string ActiveClassName = "active";
-
 
         private void OnEnable()
         {
             var rootElement = GetComponent<UIDocument>().rootVisualElement;
-            rootElement.Query(null, "draggable").ForEach(e =>
+            rootElement.Query(null, draggableClassName).ForEach(e =>
             {
                 e.RegisterCallback<PointerDownEvent>(OnPointerDown);
                 e.RegisterCallback<PointerMoveEvent>(OnPointerMove);
@@ -67,7 +68,7 @@ namespace sugi.cc.UI
                 ve.resolvedStyle.width + ve.resolvedStyle.marginRight + ve.resolvedStyle.paddingRight + container.resolvedStyle.paddingRight,
                 ve.resolvedStyle.height + ve.resolvedStyle.marginBottom + ve.resolvedStyle.paddingBottom + container.resolvedStyle.paddingBottom);
 
-            m_ActiveElement.AddToClassList(ActiveClassName);
+            m_ActiveElement.AddToClassList(draggingClassName);
             m_StartPosition = m_ActiveElement.layout.position;
             m_PointerStartPosition = pointerPosition;
         }
@@ -83,7 +84,7 @@ namespace sugi.cc.UI
 
         void ReleaseActiveElement()
         {
-            m_ActiveElement.RemoveFromClassList(ActiveClassName);
+            m_ActiveElement.RemoveFromClassList(draggingClassName);
             m_ActiveElement = null;
         }
     }

@@ -5,16 +5,16 @@
     margin-bottom: 5px;
     padding-left: 5px;
     padding-right: 5px;
-    padding-top: 5px;
+    padding-top: 20px;
     padding-bottom: 5px;
     position: absolute;
-    background-color: rgba(255, 251, 0, 255);
+    background-color: rgb(255, 251, 0);
     min-width: 100px;
     min-height: 200px;
-    border-left-color: rgba(255, 255, 255, 255);
-    border-right-color: rgba(255, 255, 255, 255);
-    border-top-color: rgba(255, 255, 255, 255);
-    border-bottom-color: rgba(255, 255, 255, 255);
+    border-left-color: rgb(255, 255, 255);
+    border-right-color: rgb(255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
     border-left-width: 1px;
     border-right-width: 1px;
     border-top-width: 1px;
@@ -25,6 +25,6 @@
     border-bottom-right-radius: 5px;
 }
 
-.active {
+.dragging {
     opacity: 0.5;
 }

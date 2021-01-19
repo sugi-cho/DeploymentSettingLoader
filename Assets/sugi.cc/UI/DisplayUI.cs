@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace sugi.cc.UI
+namespace sugi.cc.ui
 {
     [ExecuteInEditMode, RequireComponent(typeof(UIDocument))]
     public class DisplayUI : MonoBehaviour

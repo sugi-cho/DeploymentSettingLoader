@@ -11,15 +11,9 @@ namespace sugi.cc.data
         public abstract void Load(string filePath);
         public abstract void Save();
         public abstract void SaveAs(string filePath);
-        public abstract void ApplyData();
-
-        [System.Serializable]
-        public abstract class Data
-        {
-        }
     }
 
-    public abstract class LoadableSetting<T> : LoadableSetting where T : LoadableSetting.Data
+    public abstract class LoadableSetting<T> : LoadableSetting
     {
         [SerializeField] protected T data;
 
@@ -31,6 +25,7 @@ namespace sugi.cc.data
                 filePath = filePath
             };
         }
+        
 
         private void Reset()
         {
@@ -47,21 +42,23 @@ namespace sugi.cc.data
         {
             if (File.Exists(filePath))
             {
-                Debug.Log($"load: {filePath}");
                 var json = File.ReadAllText(filePath);
                 data = JsonUtility.FromJson<T>(json);
+                Debug.Log($"loaded: {filePath}");
             }
             else
             {
+                Debug.LogWarning($"file: {filePath} doesn't exist!");
                 Save();
             }
         }
 
+        [ContextMenu("save data")]
         public override void Save()
         {
-            Debug.Log($"save: {filePath}");
             var json = JsonUtility.ToJson(data);
             File.WriteAllText(filePath, json);
+            Debug.Log($"saved: {filePath}");
         }
 
         public override void SaveAs(string filePath)

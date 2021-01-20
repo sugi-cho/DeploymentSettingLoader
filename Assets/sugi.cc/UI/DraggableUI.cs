@@ -71,6 +71,8 @@ namespace sugi.cc.ui
             m_ActiveElement.AddToClassList(draggingClassName);
             m_StartPosition = m_ActiveElement.layout.position;
             m_PointerStartPosition = pointerPosition;
+            
+            container.Sort();
         }
 
         void MoveElement(Vector2 pointerPosition)

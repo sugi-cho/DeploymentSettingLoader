@@ -14,4 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   filePath: LayoutData.json
   data:
-    objectSettings: []
+    objectSettings:
+    - prefabIdx: 0
+      position: {x: 1, y: 0, z: 0}
+      rotation: {x: 0, y: 0.017452406, z: 0, w: 0.9998477}
+      scale: {x: 0, y: 0, z: 0}
+    - prefabIdx: 0
+      position: {x: 0, y: 0, z: 2}
+      rotation: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
+      scale: {x: 0, y: 0, z: 0}
+    - prefabIdx: 0
+      position: {x: 1, y: 0, z: 0}
+      rotation: {x: 0, y: 0.008726535, z: 0, w: 0.9999619}
+      scale: {x: 0, y: 0, z: 0}
+  prefabReferences: []

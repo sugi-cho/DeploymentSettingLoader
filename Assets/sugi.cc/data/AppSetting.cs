@@ -45,7 +45,6 @@ namespace sugi.cc.data
             for (var i = 0; i < loadableSettings.Length; i++)
             {
                 loadableSettings[i].Load(filePathData.filePaths[i].filePath);
-                loadableSettings[i].ApplyData();
             }
         }
 

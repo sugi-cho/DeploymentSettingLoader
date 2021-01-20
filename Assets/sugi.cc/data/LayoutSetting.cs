@@ -10,12 +10,11 @@ namespace sugi.cc.data
 {
     public class LayoutSetting : LoadableSetting<LayoutSetting.LayoutData>
     {
-        public override void ApplyData()
-        {
-        }
+        [SerializeField] private GameObject[] prefabReferences;
+        
 
         [System.Serializable]
-        public class LayoutData : LoadableSetting.Data
+        public class LayoutData
         {
             public ObjectSetting[] objectSettings;
         }
@@ -23,17 +22,16 @@ namespace sugi.cc.data
         [System.Serializable]
         public class ObjectSetting
         {
-            public ObjectType objectType;
+            public int prefabIdx;
             public Vector3 position;
             public Quaternion rotation;
+            public Vector3 scale;
         }
 
-        [System.Serializable]
-        public enum ObjectType
+        [ContextMenu("save data")]
+        void ContextMenuSave()
         {
-            Sphere,
-            Cube,
-            Cylinder,
+            base.Save();
         }
 
 #if UNITY_EDITOR
@@ -43,7 +41,9 @@ namespace sugi.cc.data
             var path = "Assets";
             foreach (var obj in Selection.GetFiltered<Object>(SelectionMode.Assets))
             {
-                path = AssetDatabase.GetAssetPath(obj);
+                var p = AssetDatabase.GetAssetPath(obj);
+                if (p != "")
+                    path = p;
                 if (!AssetDatabase.IsValidFolder(path))
                     path = Path.GetDirectoryName(path);
             }

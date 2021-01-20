@@ -155,6 +155,8 @@ MonoBehaviour:
   settingFilePath: setting.json
   loadableSettings:
   - {fileID: 11400000, guid: c9b3669761565ed4c8949a37b0e21320, type: 2}
+  filePathData:
+    filePaths: []
 --- !u!4 &1373993805
 Transform:
   m_ObjectHideFlags: 0
@@ -275,6 +277,7 @@ GameObject:
   - component: {fileID: 1941373227}
   - component: {fileID: 1941373230}
   - component: {fileID: 1941373231}
+  - component: {fileID: 1941373226}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -282,6 +285,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1941373226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1941373225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d903269f1f9cac42a3942fc9727d5a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetClassName: dataFieldContainer
 --- !u!114 &1941373227
 MonoBehaviour:
   m_ObjectHideFlags: 0

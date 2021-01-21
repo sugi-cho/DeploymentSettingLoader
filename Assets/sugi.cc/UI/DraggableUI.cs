@@ -8,7 +8,7 @@ namespace sugi.cc.ui
     {
         [SerializeField] private string draggableClassName = "draggable";
         [SerializeField] private string draggingClassName = "dragging";
-        
+
         private VisualElement m_ActiveElement;
 
         private Vector2 m_StartPosition;
@@ -65,14 +65,16 @@ namespace sugi.cc.ui
             var size = new Vector2(container.resolvedStyle.width, container.resolvedStyle.height);
             m_moveAreaMin = new Vector2(container.resolvedStyle.paddingLeft, container.resolvedStyle.paddingTop);
             m_moveAreaMax = size - new Vector2(
-                ve.resolvedStyle.width + ve.resolvedStyle.marginRight + ve.resolvedStyle.paddingRight + container.resolvedStyle.paddingRight,
-                ve.resolvedStyle.height + ve.resolvedStyle.marginBottom + ve.resolvedStyle.paddingBottom + container.resolvedStyle.paddingBottom);
+                ve.resolvedStyle.width + ve.resolvedStyle.marginRight + ve.resolvedStyle.paddingRight +
+                container.resolvedStyle.paddingRight,
+                ve.resolvedStyle.height + ve.resolvedStyle.marginBottom + ve.resolvedStyle.paddingBottom +
+                container.resolvedStyle.paddingBottom);
 
             m_ActiveElement.AddToClassList(draggingClassName);
             m_StartPosition = m_ActiveElement.layout.position;
             m_PointerStartPosition = pointerPosition;
-            
-            container.Sort();
+
+            ve.PlaceInFront(container.ElementAt(container.childCount - 1));
         }
 
         void MoveElement(Vector2 pointerPosition)

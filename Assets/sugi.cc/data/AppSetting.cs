@@ -13,12 +13,12 @@ namespace sugi.cc.data
 
         private string m_FilePath;
 
-        private void Start()
+        private void Awake()
         {
             filePathData.filePaths = loadableSettings.Select(setting => setting.GetNameAndPath()).ToArray();
             m_FilePath = Path.Combine(Application.streamingAssetsPath, settingFilePath);
             LoadSettingFilePaths();
-            ApplySettings();
+            LoadLoadableSettings();
         }
 
         public void LoadSettingFilePaths()
@@ -40,7 +40,7 @@ namespace sugi.cc.data
             File.WriteAllText(m_FilePath, json);
         }
 
-        void ApplySettings()
+        void LoadLoadableSettings()
         {
             for (var i = 0; i < loadableSettings.Length; i++)
             {

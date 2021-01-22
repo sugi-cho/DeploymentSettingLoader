@@ -1,9 +1,9 @@
 using System.Linq;
 using UnityEngine;
-#if UNITY_EDITOR
 using System.IO;
+using SFB;
+#if UNITY_EDITOR
 using UnityEditor;
-
 #endif
 
 namespace sugi.cc.data
@@ -11,7 +11,6 @@ namespace sugi.cc.data
     public class LayoutSetting : LoadableSetting<LayoutSetting.LayoutData>
     {
         [SerializeField] private GameObject[] prefabReferences;
-        
 
         [System.Serializable]
         public class LayoutData
@@ -28,10 +27,22 @@ namespace sugi.cc.data
             public Vector3 scale;
         }
 
+        [ContextMenu("load file")]
+        void ContextMenuLoad()
+        {
+            base.LoadFile();
+        }
+
         [ContextMenu("save data")]
         void ContextMenuSave()
         {
             base.Save();
+        }
+
+        [ContextMenu("save as..")]
+        void ContextMenuSaveAs()
+        {
+            base.SaveAs();
         }
 
 #if UNITY_EDITOR

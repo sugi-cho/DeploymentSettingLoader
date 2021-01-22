@@ -7,7 +7,7 @@
             <ui:Button text="setting3" display-tooltip-when-elided="true" style="margin-left: auto; margin-right: auto;" />
         </ui:VisualElement>
         <ui:VisualElement name="body" style="flex-grow: 1; flex-direction: row-reverse;">
-            <ui:VisualElement name="side_menu" class="dataFieldContainer" style="flex-grow: 0; min-width: 200px; background-color: rgb(39, 0, 255); display: flex; min-height: 200px;">
+            <ui:VisualElement name="side_menu" class="dataFieldContainer" style="flex-grow: 0; background-color: rgb(39, 0, 255); display: flex; min-width: 200px;">
                 <ui:TextField picking-mode="Ignore" label="Text Field" value="filler text" text="filler text" />
                 <uie:Vector3Field label="Vec3 Field" />
             </ui:VisualElement>

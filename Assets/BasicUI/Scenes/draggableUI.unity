@@ -297,7 +297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d903269f1f9cac42a3942fc9727d5a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetClassName: dataFieldContainer
+  targetClassName: data-field-container
 --- !u!114 &1941373227
 MonoBehaviour:
   m_ObjectHideFlags: 0

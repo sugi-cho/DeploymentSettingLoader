@@ -10,6 +10,7 @@ namespace sugi.cc.ui
             var field = new TextField(label);
             field.value = value.ToString();
             field.isDelayed = true;
+            field.AddToClassList("value-field");
             field.RegisterCallback<ChangeEvent<string>>((evt) =>
             {
                 var val = evt.newValue;
@@ -28,6 +29,7 @@ namespace sugi.cc.ui
             var field = new TextField(label);
             field.value = value.ToString();
             field.isDelayed = true;
+            field.AddToClassList("int-field");
             field.RegisterCallback<ChangeEvent<string>>((evt) =>
             {
                 var val = evt.newValue;
@@ -54,6 +56,7 @@ namespace sugi.cc.ui
             v3Element.Add(xField);
             v3Element.Add(yField);
             v3Element.Add(zField);
+            v3Element.AddToClassList("vector-elements");
 
             v3Element.Query<TextField>().ForEach(tf =>
             {
@@ -67,6 +70,7 @@ namespace sugi.cc.ui
                     if (float.TryParse(newVal, out val))
                         m_Value[index] = val;
                     field.value = Value[index].ToString();
+                    field.AddToClassList("value-field");
                 });
             });
             if (label == null)
@@ -78,7 +82,7 @@ namespace sugi.cc.ui
                 var labelField = new Label(label);
                 labelField.AddToClassList("unity-base-field__label");
                 Element = new VisualElement();
-                Element.AddToClassList("unity-base-field");
+                Element.AddToClassList("value-field");
                 Element.Add(labelField);
                 Element.Add(v3Element);
             }

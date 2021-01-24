@@ -54,9 +54,11 @@ namespace Samples.Runtime.Events
 
         private void OnPointerDown(PointerDownEvent evt)
         {
+            
+            Debug.Log($"{evt.pointerType}: {evt.target}");
             if (evt.pointerType != PointerType.touch)
             {
-                //return;
+                return;
             }
 
             if (evt.currentTarget == evt.target)

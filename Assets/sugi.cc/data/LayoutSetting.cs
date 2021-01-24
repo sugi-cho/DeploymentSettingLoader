@@ -1,7 +1,5 @@
-using System.Linq;
 using UnityEngine;
 using System.IO;
-using SFB;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -10,6 +8,8 @@ namespace sugi.cc.data
 {
     public class LayoutSetting : LoadableSetting<LayoutSetting.LayoutData>
     {
+        public GameObject[] PrefabReferences => prefabReferences;
+
         [SerializeField] private GameObject[] prefabReferences;
 
         [System.Serializable]

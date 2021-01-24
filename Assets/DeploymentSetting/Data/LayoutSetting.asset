@@ -19,12 +19,15 @@ MonoBehaviour:
       position: {x: 1, y: 0, z: 0}
       rotation: {x: 0, y: 0.017452406, z: 0, w: 0.9998477}
       scale: {x: 0, y: 0, z: 0}
-    - prefabIdx: 0
+    - prefabIdx: 1
       position: {x: 0, y: 0, z: 2}
       rotation: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
       scale: {x: 0, y: 0, z: 0}
-    - prefabIdx: 0
+    - prefabIdx: 2
       position: {x: 1, y: 0, z: 0}
       rotation: {x: 0, y: 0.008726535, z: 0, w: 0.9999619}
       scale: {x: 0, y: 0, z: 0}
-  prefabReferences: []
+  prefabReferences:
+  - {fileID: 4846447305678794019, guid: 637eae974f941ad4f9abff3c1137b40c, type: 3}
+  - {fileID: 428117414864166354, guid: 70105da7848a248489ce7da187ed0d27, type: 3}
+  - {fileID: 682565946800724484, guid: 1c46c64d42b45f1498fa183d27710676, type: 3}

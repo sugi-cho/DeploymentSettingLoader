@@ -13,10 +13,15 @@ namespace sugi.cc.data
         public abstract void LoadFile();
         public abstract void Save();
         public abstract void SaveAs();
+        protected void Save(string path, string json)
+        {
+            File.WriteAllText(path, json);
+        }
     }
 
     public abstract class LoadableSetting<T> : LoadableSetting
     {
+        public T Data => data;
         [SerializeField] protected T data;
 
         public override DataNameAndFilePath GetNameAndPath()
@@ -75,9 +80,10 @@ namespace sugi.cc.data
         public override void Save()
         {
             var json = JsonUtility.ToJson(data);
-            File.WriteAllText(filePath, json);
+            Save(filePath, json);
             Debug.Log($"saved: {filePath}");
         }
+
 
         public override void SaveAs()
         {
@@ -94,6 +100,23 @@ namespace sugi.cc.data
                     if (path.Length == 0) return;
                     filePath = path;
                     Save();
+                });
+        }
+
+        public void SaveAs(string json)
+        {
+            var directoryName = 0 < filePath.Length ? Path.GetDirectoryName(filePath) : "";
+            var fileName = 0 < filePath.Length ? Path.GetFileName(filePath) : "";
+            var extensions = new[]
+            {
+                new ExtensionFilter("Json File", "json"),
+                new ExtensionFilter("All Files", "*")
+            };
+            StandaloneFileBrowser.SaveFilePanelAsync($"Save {typeof(T).Name}", directoryName, fileName, extensions,
+                (path) =>
+                {
+                    if (path.Length == 0) return;
+                    Save(path, json);
                 });
         }
     }

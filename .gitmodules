@@ -1,3 +1,3 @@
 [submodule "Assets/sugicc"]
-	path = Assets/sugi.cc
+	path = Assets/sugicc
 	url = https://github.com/sugi-cho/sugi.cc.git

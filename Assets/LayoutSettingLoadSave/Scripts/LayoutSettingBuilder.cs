@@ -2,6 +2,9 @@ using System.Linq;
 using UnityEngine;
 using sugi.cc.data;
 
+using SFB;
+using System.IO;
+
 public class LayoutSettingBuilder : MonoBehaviour
 {
     public LayoutSetting LayoutSetting => layoutSetting;
@@ -28,5 +31,22 @@ public class LayoutSettingBuilder : MonoBehaviour
     }
 
     [ContextMenu("save data")]
-    void SaveData() => layoutSetting.SaveAs(JsonUtility.ToJson(layoutData));
+    void SaveData()
+    {
+
+        var filePath = layoutSetting.FilePath;
+        var directoryName = 0 < filePath.Length ? Path.GetDirectoryName(filePath) : "";
+        var fileName = 0 < filePath.Length ? Path.GetFileName(filePath) : "";
+        var extensions = new[]
+        {
+                new ExtensionFilter("Json File", "json"),
+                new ExtensionFilter("All Files", "*")
+            };
+        StandaloneFileBrowser.SaveFilePanelAsync(
+            $"Load {layoutData.GetType().Name} JSON", directoryName, fileName, extensions, (path) =>
+            {
+                layoutSetting.Save(path, layoutData);
+            });
+
+    }
 }

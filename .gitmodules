@@ -1,3 +1,6 @@
 [submodule "Assets/sugi.cc"]
 	path = Assets/sugi.cc
 	url = https://github.com/sugi-cho/sugi.cc.git
+[submodule "Assets/Libs/UnityStandaloneFileBrowser"]
+	path = Assets/Libs/UnityStandaloneFileBrowser
+	url = https://github.com/sugi-cho/UnityStandaloneFileBrowser.git

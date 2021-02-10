@@ -22,7 +22,8 @@ public class LayoutSettingBuilder : MonoBehaviour
     private void OnValidate()
     {
         var objs = GetComponentsInChildren<LayoutSettingObject>();
-        for (var i = 0; i < layoutData.objectSettings.Length - objs.Length; i++)
+        var count = layoutData.objectSettings.Length - objs.Length;
+        for (var i = 0; i < count; i++)
         {
             var trs = new GameObject("LayoutSettingObject").transform;
             trs.SetParent(transform);

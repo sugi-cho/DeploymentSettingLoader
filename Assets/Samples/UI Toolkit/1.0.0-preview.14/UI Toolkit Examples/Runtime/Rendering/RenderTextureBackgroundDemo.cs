@@ -3,7 +3,6 @@ using UnityEngine.UIElements;
 
 namespace Samples.Runtime.Rendering
 {
-    [ExecuteInEditMode]
     public class RenderTextureBackgroundDemo : MonoBehaviour
     {
         [SerializeField] public VisualTreeAsset visualTreeAsset;

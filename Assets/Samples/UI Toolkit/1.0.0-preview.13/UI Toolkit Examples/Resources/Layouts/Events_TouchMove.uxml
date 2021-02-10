@@ -1,9 +1,0 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="/Assets/Samples/UI Toolkit/1.0.0-preview.13/UI Toolkit Examples/Resources/StyleSheets/Events_TouchMove.uss" />
-    <ui:VisualElement class="container">
-        <ui:VisualElement class="elem elem_1" />
-        <ui:VisualElement class="elem elem_2" />
-        <ui:VisualElement class="elem elem_3" />
-        <ui:VisualElement class="elem elem_4" />
-    </ui:VisualElement>
-</ui:UXML>

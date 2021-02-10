@@ -5,7 +5,7 @@ using PointerType = UnityEngine.UIElements.PointerType;
 
 namespace Samples.Runtime.Events
 {
-    [RequireComponent(typeof(UIDocument), typeof(EventSystem))]
+    [RequireComponent(typeof(UIDocument))]
     public class TouchMove : MonoBehaviour
     {
         [SerializeField] private PanelSettings panelSettings = default;
@@ -54,8 +54,6 @@ namespace Samples.Runtime.Events
 
         private void OnPointerDown(PointerDownEvent evt)
         {
-            
-            Debug.Log($"{evt.pointerType}: {evt.target}");
             if (evt.pointerType != PointerType.touch)
             {
                 return;

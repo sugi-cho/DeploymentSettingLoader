@@ -1,10 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using sugi.cc.data;
-using Unity.Mathematics;
-using UnityEngine.Serialization;
 
 public class LayoutSettingObject : MonoBehaviour
 {

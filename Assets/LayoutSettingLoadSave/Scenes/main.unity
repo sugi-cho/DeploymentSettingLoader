@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -278,7 +278,7 @@ MonoBehaviour:
   filePathData:
     filePaths:
     - dataName: LayoutData
-      filePath: C:\Users\sugi-cho\Desktop\LayoutData.json
+      filePath: LayoutData.json
 --- !u!4 &1373993805
 Transform:
   m_ObjectHideFlags: 0
@@ -546,7 +546,7 @@ GameObject:
   - component: {fileID: 1941373227}
   - component: {fileID: 1941373230}
   - component: {fileID: 1941373231}
-  - component: {fileID: 1941373226}
+  - component: {fileID: 1941373232}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -554,19 +554,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1941373226
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1941373225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d903269f1f9cac42a3942fc9727d5a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetClassName: data-field-container
 --- !u!114 &1941373227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -658,6 +645,19 @@ MonoBehaviour:
     m_SingletonActionBindings: []
   targetClassName: 
   additionalClassName: 
+--- !u!114 &1941373232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1941373225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3826a5fef5aa1694a8fb363a9049f6db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enumValue: 0
 --- !u!1 &1964282324
 GameObject:
   m_ObjectHideFlags: 0
